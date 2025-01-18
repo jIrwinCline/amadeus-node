@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Amadeus = require("amadeus");
 const express = require("express");
 const socket = require("socket.io");

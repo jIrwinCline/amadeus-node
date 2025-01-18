@@ -1,0 +1,48 @@
+{
+	"name": "amadeus-node",
+	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
+	"dockerComposeFile": "docker-compose.yml",
+
+	// The 'service' property is the name of the service for the container that VS Code should
+	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+	"service": "app",
+
+	// The optional 'workspaceFolder' property is the path VS Code should open by default when
+	// connected. This is typically a volume mount in .devcontainer/docker-compose.yml
+	"workspaceFolder": "/workspaces/amadeus-node",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"eamodio.gitlens",
+				"EditorConfig.EditorConfig",
+				"firsttris.vscode-jest-runner",
+				"GitHub.vscode-pull-request-github",
+				"mgmcdermott.vscode-language-babel",
+				"OfHumanBondage.react-proptypes-intellisense",
+				"pflannery.vscode-versionlens",
+				"wix.vscode-import-cost"
+			],
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh"
+			}
+		}
+	},
+  "features": {
+    "node": {
+      "version": "lts",
+      "nodeGypDependencies": true
+    }
+  },
+
+	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
+	// "shutdownAction": "none",
+
+	// Comment out to connect as root instead. To add a non-root user, see: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node",
+
+	"postStartCommand": "npm install && npm start",
+
+	"forwardPorts": [2800]
+}
